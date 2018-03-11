@@ -103,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C22869A22055A06C00BDDB7B /* Build configuration list for PBXNativeTarget "Cities" */;
 			buildPhases = (
+				C22869B22055A4DD00BDDB7B /* Lint Project */,
 				C22869812055A06B00BDDB7B /* Sources */,
 				C22869822055A06B00BDDB7B /* Frameworks */,
 				C22869832055A06B00BDDB7B /* Resources */,
@@ -193,6 +194,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C22869B22055A4DD00BDDB7B /* Lint Project */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Lint Project";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"Warning: SwiftLint not installed\"\nfi\n\nif which iblinter >/dev/null; then\n    iblinter lint\nelse\n    echo \"warning: IBLinter not installed, download from https://github.com/kateinoigakukun/IBLinter\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C22869812055A06B00BDDB7B /* Sources */ = {
